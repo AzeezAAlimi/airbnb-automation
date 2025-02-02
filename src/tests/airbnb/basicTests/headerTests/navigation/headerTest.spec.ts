@@ -1,6 +1,5 @@
 import { test, expect } from '@playwright/test';
 import { HomePage } from '../../../../../pages/airbnb/homePage';
-import { AccountSettings } from '../../../../../pages/airbnb/exploreHeader/mainNavigationMenu/page/Account/accountSettings';
 import { loadHomePage } from '../../../../../utilities/helper';
 
 test('Example', async ({ page }) => {
