@@ -5,7 +5,7 @@ import { Privacy } from './Common-components/privacy';
 import { YourPrivacyChoices } from './Common-components/yourPrivacyChoices';
 import { ChooseALanguage } from './Common-components/selectALanguage';
 import { ChooseACurrency } from './Common-components/selectACurrency';
-import { AirbnbFacebook } from './Common-components/airBnbFacebook';
+import { AirbnbFacebook } from './Common-components/airbnbFacebook';
 import { AirbnbX } from './Common-components/airbnbX';
 import { AirbnbInstagram } from './Common-components/airbnbInstagram';
 
