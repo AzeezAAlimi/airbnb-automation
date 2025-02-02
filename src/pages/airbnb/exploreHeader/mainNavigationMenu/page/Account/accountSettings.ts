@@ -2,7 +2,7 @@ import { expect, type Locator, type Page } from '@playwright/test';
 import { GoToProfile } from './goToProfile';
 import { GlobalPreferences } from './globalPreferences';
 import { PersonalInfo } from './personalInfo';
-import { LoginAndSecurity } from './loginAndsecurity';
+import { LoginAndSecurity } from './loginAndSecurity';
 import { PaymentsAndPayouts } from './paymentsAndPayouts';
 import { Taxes } from './taxes';
 import { Notifications } from '../notifications';
