@@ -2,11 +2,43 @@ import { test, expect } from '@playwright/test';
 import { HomePage } from '../../../../../pages/airbnb/homePage';
 import { loadHomePage } from '../../../../../utilities/helper';
 
-test('Example', async ({ page }) => {
-  const homePage = new HomePage(page);
-  await loadHomePage(page);
+let homePage: HomePage;
 
-  await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.emailLogin('qaairbnb0@gmail.com', 'test12345?');
-  const account = await homePage.header.navigationMenu.navMenuBtnLoggedin.navigateToAccount();
-  await account.personalInfo.getPageURL();
+test.beforeEach(async ({ page }) => {
+  homePage = new HomePage(page);
+  await loadHomePage(page);
+});
+
+test.describe('Homepage login test', () => {
+  test('Show 1000 places', async ({ page }) => {
+    await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.emailLogin(
+      'qaairbnb0@gmail.com',
+      'test12345?',
+    );
+    await homePage.header.filters.show1000PlacesFilter();
+  });
+
+  test('Clear all filter', async ({ page }) => {
+    await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.emailLogin(
+      'qaairbnb0@gmail.com',
+      'test12345?',
+    );
+    await homePage.header.filters.clearAllFilter();
+  });
+
+  test('Show the selected filter', async ({ page }) => {
+    await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.emailLogin(
+      'qaairbnb0@gmail.com',
+      'test12345?',
+    );
+    await homePage.header.filters.showPlacesFilter();
+  });
+
+  test('Clear the selected filters', async ({ page }) => {
+    await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.emailLogin(
+      'qaairbnb0@gmail.com',
+      'test12345?',
+    );
+    await homePage.header.filters.clearRandomFilter();
+  });
 });
