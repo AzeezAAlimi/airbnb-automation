@@ -1,13 +1,13 @@
 import { Locator, type Page } from '@playwright/test';
-import { Terms } from './common-components/terms';
-import { SiteMap } from './common-components/sitemap';
-import { Privacy } from './common-components/privacy';
-import { YourPrivacyChoices } from './common-components/yourPrivacyChoices';
-import { ChooseALanguage } from './common-components/selectALanguage';
-import { ChooseACurrency } from './common-components/selectACurrency';
-import { AirbnbFacebook } from './Common-components/airBnbFacebook';
-import { AirbnbX } from './common-components/airbnbX';
-import { AirbnbInstagram } from './common-components/airbnbInstagram';
+import { Terms } from './Common-components/terms.ts'
+import { SiteMap } from './common-components/sitemap.ts';
+import { Privacy } from './common-components/privacy.ts';
+import { YourPrivacyChoices } from './common-components/yourPrivacyChoices.ts';
+import { ChooseALanguage } from './common-components/selectALanguage.ts';
+import { ChooseACurrency } from './common-components/selectACurrency.ts';
+import { AirbnbFacebook } from './Common-components/airBnbFacebook.ts';
+import { AirbnbX } from './common-components/airbnbX.ts';
+import { AirbnbInstagram } from './common-components/airbnbInstagram.ts';
 
 export class FooterSection {
   readonly page: Page;
