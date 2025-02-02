@@ -1,5 +1,5 @@
 import { Locator, type Page } from '@playwright/test';
-import { Terms } from './Common-components/terms.ts'
+import { Terms } from './common-components/terms.ts'
 import { SiteMap } from './common-components/sitemap.ts';
 import { Privacy } from './common-components/privacy.ts';
 import { YourPrivacyChoices } from './common-components/yourPrivacyChoices.ts';
