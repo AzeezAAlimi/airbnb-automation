@@ -39,4 +39,3 @@ test.describe('Homepage footer test', () => {
     await homePage.footer.footerChooseACurrency.clickonCroatianKunaBtn();
   });
 });
-//

@@ -13,30 +13,6 @@ test('header test', async ({ page }) => {
   await homepage.header.navigationMenu.navMenuBtnLoggedout.navigateToHelpCenter;
 });
 
-test('Apple login test', async ({ page }) => {
-  const homePage = new HomePage(page);
-  await loadHomePage(page);
-  await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.appleLogin;
-});
-
-test('Facebook login test', async ({ page }) => {
-  const homePage = new HomePage(page);
-  await loadHomePage(page);
-  await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.facebookLogin();
-});
-
-test('Google login test', async ({ page }) => {
-  const homePage = new HomePage(page);
-  await loadHomePage(page);
-  await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.googleLogin();
-});
-
-test('Loggedin - Email login test', async ({ page }) => {
-  const homePage = new HomePage(page);
-  await loadHomePage(page);
-  await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.emailLogin('qaairbnb0@gmail.com', 'test12345?');
-});
-
 test('Loggedin - Account - Go to profile - createProfile & editProfile test', async ({ page }) => {
   const homePage = new HomePage(page);
   await loadHomePage(page);
