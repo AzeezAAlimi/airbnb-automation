@@ -1,5 +1,5 @@
 import { Locator, type Page } from '@playwright/test';
-import { Terms } from './Common-components/terms'
+import { Terms } from './Common-components/terms';
 import { SiteMap } from './Common-components/sitemap';
 import { Privacy } from './Common-components/privacy';
 import { YourPrivacyChoices } from './Common-components/yourPrivacyChoices';

@@ -1,9 +1,9 @@
 import { test, expect } from '@playwright/test';
-import { HomePage } from '../../../../pages/airbnb/homePage';
-import { AccountSettings } from '../../../../pages/airbnb/exploreHeader/mainNavigationMenu/page/Account/accountSettings';
-import { loadHomePage } from '../../../../utilities/helper';
+import { HomePage } from '../../../../../pages/airbnb/homePage';
+import { AccountSettings } from '../../../../../pages/airbnb/exploreHeader/mainNavigationMenu/page/Account/accountSettings';
+import { loadHomePage } from '../../../../../utilities/helper';
 
-test('header test', async ({ page }) => {
+test('Giftcards, Airbnb your home, Host an experience and Help center', async ({ page }) => {
   const homepage = new HomePage(page);
   await loadHomePage(page);
   await homepage.header.navigationMenu.navMenuBtnLoggedout.navigateToGiftCards;
@@ -11,6 +11,38 @@ test('header test', async ({ page }) => {
   await page.pause();
   await homepage.header.navigationMenu.navMenuBtnLoggedout.navigateToHostExperience;
   await homepage.header.navigationMenu.navMenuBtnLoggedout.navigateToHelpCenter;
+});
+
+test('Loggedout - Giftcards - Get title', async ({ page }) => {
+  const homePage = new HomePage(page);
+  await loadHomePage(page);
+
+  const giftcards = await homePage.header.navigationMenu.navMenuBtnLoggedout.navigateToGiftCards();
+  await giftcards.getPageTitle();
+});
+
+test('Loggedout - Airbnb your home - Get URL', async ({ page }) => {
+  const homePage = new HomePage(page);
+  await loadHomePage(page);
+
+  const airbnbYourHome = await homePage.header.navigationMenu.navMenuBtnLoggedout.navigateToAirbnbYourHome();
+  await airbnbYourHome.getPageURL();
+});
+
+test('Loggedout - Host an experience - Get URL', async ({ page }) => {
+  const homePage = new HomePage(page);
+  await loadHomePage(page);
+
+  const hostAnExperience = await homePage.header.navigationMenu.navMenuBtnLoggedout.navigateToHostExperience();
+  await hostAnExperience.getPageURL();
+});
+
+test('Loggedout - Help center - Get URL', async ({ page }) => {
+  const homePage = new HomePage(page);
+  await loadHomePage(page);
+
+  const helpCenter = await homePage.header.navigationMenu.navMenuBtnLoggedout.navigateToHelpCenter();
+  await helpCenter.getPageURL();
 });
 
 test('Loggedin - Account - Go to profile - createProfile & editProfile test', async ({ page }) => {
@@ -71,38 +103,6 @@ test('Loggedin - Log out', async ({ page }) => {
 
   // Navigate to Account settings and store the instance
   await homePage.header.navigationMenu.navMenuBtnLoggedin.navigateToLogout();
-});
-
-test('Loggedout - Giftcards - Get title', async ({ page }) => {
-  const homePage = new HomePage(page);
-  await loadHomePage(page);
-
-  const giftcards = await homePage.header.navigationMenu.navMenuBtnLoggedout.navigateToGiftCards();
-  await giftcards.getPageTitle();
-});
-
-test('Loggedout - Airbnb your home - Get URL', async ({ page }) => {
-  const homePage = new HomePage(page);
-  await loadHomePage(page);
-
-  const airbnbYourHome = await homePage.header.navigationMenu.navMenuBtnLoggedout.navigateToAirbnbYourHome();
-  await airbnbYourHome.getPageURL();
-});
-
-test('Loggedout - Host an experience - Get URL', async ({ page }) => {
-  const homePage = new HomePage(page);
-  await loadHomePage(page);
-
-  const hostAnExperience = await homePage.header.navigationMenu.navMenuBtnLoggedout.navigateToHostExperience();
-  await hostAnExperience.getPageURL();
-});
-
-test('Loggedout - Help center - Get URL', async ({ page }) => {
-  const homePage = new HomePage(page);
-  await loadHomePage(page);
-
-  const helpCenter = await homePage.header.navigationMenu.navMenuBtnLoggedout.navigateToHelpCenter();
-  await helpCenter.getPageURL();
 });
 
 test('Example', async ({ page }) => {
