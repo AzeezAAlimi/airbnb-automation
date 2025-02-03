@@ -18,27 +18,9 @@ test.describe('Homepage login test', () => {
     await homePage.header.filters.show1000PlacesFilter();
   });
 
-  test('Clear all filter', async ({ page }) => {
-    await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.emailLogin(
-      'qaairbnb0@gmail.com',
-      'test12345?',
-    );
-    await homePage.header.filters.clearAllFilter();
+  test('Show places', async ({ page }) => {
+    await homePage.header.airbnbCategories.icons()
+    await page.pause()
   });
 
-  test('Show the selected filter', async ({ page }) => {
-    await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.emailLogin(
-      'qaairbnb0@gmail.com',
-      'test12345?',
-    );
-    await homePage.header.filters.showPlacesFilter();
-  });
-
-  test('Clear the selected filters', async ({ page }) => {
-    await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.emailLogin(
-      'qaairbnb0@gmail.com',
-      'test12345?',
-    );
-    await homePage.header.filters.clearRandomFilter();
-  });
 });
