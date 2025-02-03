@@ -14,19 +14,18 @@ export class SearchExperiences {
     this.page = page;
     this.experiencesTab = page.getByTestId('header-tab-search-block-tab-EXPERIENCES');
     this.experiencesSearchDestinationTab = page.getByTestId('structured-search-input-field-query');
-    this.experiencesSearchDestinationResult = page
-      .getByTestId('structured-search-input-field-query-panel')
-      .getByTestId('option-0')
-      .getByText('Havana, Cuba');
+    this.experiencesSearchDestinationResult = page.getByTestId('structured-search-input-field-query-panel').first();
     this.experiencesDatesTab = page.getByTestId('structured-search-input-field-dates-button');
     this.experiencesGuestsDetailsTab = page.getByTestId('structured-search-input-field-guests-button');
     this.experiencesGuestsAddAdult = page.getByTestId('stepper-adults-increase-button');
     this.searchBtn = page.getByTestId('structured-search-input-search-button');
   }
 
-  async searchForAExperience() {
-    await this.experiencesTab.click();
-    await this.experiencesSearchDestinationTab.fill('havana, cuba');
+  async searchForAExperience(destination: string) {
+    await this.page.getByTestId('header-tab-search-block-tab-STAYS').click();
+    await this.experiencesTab.click({ force: true });
+    await this.experiencesSearchDestinationTab.fill(destination);
+    await this.experiencesSearchDestinationResult.waitFor({ state: 'visible' });
     await this.experiencesSearchDestinationResult.click();
     await this.experiencesDatesTab.click();
     await this.experiencesGuestsDetailsTab.click();

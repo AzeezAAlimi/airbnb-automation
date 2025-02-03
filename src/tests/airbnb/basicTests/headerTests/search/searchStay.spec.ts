@@ -9,16 +9,15 @@ test.beforeEach(async ({ page }) => {
   await loadHomePage(page);
 });
 
-test.describe('Airbnb categories', () => {
-  test('Loggedin - Airbnb categories - Icons', async ({ page }) => {
+test.describe('Search for a stay', () => {
+  test('Loggedin - Search a stay', async ({ page }) => {
     await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.emailLogin(
       'qaairbnb0@gmail.com',
       'test12345?',
     );
-    await homePage.header.airbnbCategories.icons();
+    await homePage.header.searchTab.searchStays.searchForAStay('France');
   });
-
-  test('Airbnb categories - Icons', async ({ page }) => {
-    await homePage.header.airbnbCategories.icons();
+  test('Loggedout - Search a stay', async ({ page }) => {
+    await homePage.header.searchTab.searchStays.searchForAStay('Cuba');
   });
 });
