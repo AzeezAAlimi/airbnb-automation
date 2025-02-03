@@ -1,23 +1,23 @@
 import { expect, type Locator, type Page } from '@playwright/test';
 
 export class SearchStays {
-  readonly page: Page;
-  readonly staysTab: Locator;
-  readonly staysSearchDestinationTab: Locator;
-  readonly staysSearchDestinationResult: Locator;
-  readonly staysCheckinTab: Locator;
-  readonly staysCheckinDatesTab: Locator;
-  readonly staysCheckoutTab: Locator;
-  readonly staysCheckoutDatesTab: Locator;
-  readonly staysMonthsDatesTab: Locator;
-  readonly staysFlexibleTab: Locator;
-  readonly staysFlexibleWeekendTab: Locator;
-  readonly staysFlexibleWeekTab: Locator;
-  readonly staysFlexibleMonthTab: Locator;
-  readonly staysFlexibleSelectMonthTab: Locator;
-  readonly staysGuestsDetailsTab: Locator;
-  readonly staysGuestsAddAdult: Locator;
-  readonly searchBtn: Locator;
+  private readonly page: Page;
+  private readonly staysTab: Locator;
+  private readonly staysSearchDestinationTab: Locator;
+  private readonly staysSearchDestinationResult: Locator;
+  private readonly staysCheckinTab: Locator;
+  private readonly staysCheckinDatesTab: Locator;
+  private readonly staysCheckoutTab: Locator;
+  private readonly staysCheckoutDatesTab: Locator;
+  private readonly staysMonthsDatesTab: Locator;
+  private readonly staysFlexibleTab: Locator;
+  private readonly staysFlexibleWeekendTab: Locator;
+  private readonly staysFlexibleWeekTab: Locator;
+  private readonly staysFlexibleMonthTab: Locator;
+  private readonly staysFlexibleSelectMonthTab: Locator;
+  private readonly staysGuestsDetailsTab: Locator;
+  private readonly staysGuestsAddAdult: Locator;
+  private readonly searchBtn: Locator;
 
   constructor(page: Page) {
     this.page = page;

@@ -20,5 +20,6 @@ test.describe('Airbnb categories', () => {
 
   test('Airbnb categories - Icons', async ({ page }) => {
     await homePage.header.airbnbCategories.icons();
+    await homePage.header.searchTab.searchStays.
   });
 });

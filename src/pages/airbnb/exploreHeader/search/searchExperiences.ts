@@ -1,14 +1,14 @@
 import { expect, type Locator, type Page } from '@playwright/test';
 
 export class SearchExperiences {
-  readonly page: Page;
-  readonly experiencesTab: Locator;
-  readonly experiencesSearchDestinationTab: Locator;
-  readonly experiencesSearchDestinationResult: Locator;
-  readonly experiencesDatesTab: Locator;
-  readonly experiencesGuestsDetailsTab: Locator;
-  readonly experiencesGuestsAddAdult: Locator;
-  readonly searchBtn: Locator;
+  private readonly page: Page;
+  private readonly experiencesTab: Locator;
+  private readonly experiencesSearchDestinationTab: Locator;
+  private readonly experiencesSearchDestinationResult: Locator;
+  private readonly experiencesDatesTab: Locator;
+  private readonly experiencesGuestsDetailsTab: Locator;
+  private readonly experiencesGuestsAddAdult: Locator;
+  private readonly searchBtn: Locator;
 
   constructor(page: Page) {
     this.page = page;
