@@ -9,20 +9,20 @@ test.beforeEach(async ({ page }) => {
   await loadHomePage(page);
 });
 
-test.describe('Homepage login test', () => {
-  test('Apple login test', async ({}) => {
+test.describe('Loggedout - Navigation - Login', () => {
+  test('Loggedout - Apple login', async ({}) => {
     await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.appleLogin;
   });
 
-  test('Facebook login test', async ({}) => {
+  test('Loggedout - Facebook login', async ({}) => {
     await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.facebookLogin();
   });
 
-  test('Google login test', async ({}) => {
+  test('Loggedout - Google login', async ({}) => {
     await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.googleLogin();
   });
 
-  test('Email login test', async ({}) => {
+  test('Loggedout - Email login', async ({}) => {
     await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.emailLogin(
       'qaairbnb0@gmail.com',
       'test12345?',

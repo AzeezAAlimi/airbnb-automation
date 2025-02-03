@@ -9,7 +9,7 @@ test.beforeEach(async ({ page }) => {
   await loadHomePage(page);
 });
 
-test('Loggedin - Account - Go to profile - createProfile & editProfile test', async ({ page }) => {
+test('Loggedin - Account - Go to profile - Create Profile & Edit Profile test', async ({ page }) => {
   await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.emailLogin('qaairbnb0@gmail.com', 'test12345?');
   const accountSettings = await homePage.header.navigationMenu.navMenuBtnLoggedin.navigateToAccount();
   await accountSettings.goToProfile.createProfile('Engineer');

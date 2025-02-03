@@ -9,8 +9,8 @@ test.beforeEach(async ({ page }) => {
   await loadHomePage(page);
 });
 
-test.describe('Loggedin - GlobalPreferences - Change currency', () => {
-  test('Change currency to EUR', async ({ page }) => {
+test.describe('Loggedin - Navigation - Account - Global Preferences - Change currency', () => {
+  test('Loggedin - Navigation - Account - Global Preferences - Change currency to EUR', async ({ page }) => {
     await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.emailLogin(
       'qaairbnb0@gmail.com',
       'test12345?',
@@ -19,7 +19,7 @@ test.describe('Loggedin - GlobalPreferences - Change currency', () => {
     await accountSettings.globalPreferences.changecurrencyToEUR();
   });
 
-  test('Change currency to USD', async ({ page }) => {
+  test('Loggedin - Navigation - Account - Global Preferences - Change currency to USD', async ({ page }) => {
     await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.emailLogin(
       'qaairbnb0@gmail.com',
       'test12345?',
@@ -28,7 +28,7 @@ test.describe('Loggedin - GlobalPreferences - Change currency', () => {
     await accountSettings.globalPreferences.changecurrencyToUSD();
   });
 
-  test('Change currency to GBP', async ({ page }) => {
+  test('Loggedin - Navigation - Account - Global Preferences - Change currency to GBP', async ({ page }) => {
     await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.emailLogin(
       'qaairbnb0@gmail.com',
       'test12345?',

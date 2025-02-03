@@ -9,7 +9,7 @@ test.beforeEach(async ({ page }) => {
   await loadHomePage(page);
 });
 
-test.describe('Loggedin navigation', () => {
+test.describe('Loggedin - Navigation', () => {
   test('Loggedin - Message - Search for message', async ({ page }) => {
     await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.emailLogin(
       'qaairbnb0@gmail.com',

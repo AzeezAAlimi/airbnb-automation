@@ -163,7 +163,7 @@ export class Filter {
     this.spanishLangBtn = page.getByRole('checkbox', { name: 'Spanish' });
     this.dutchLangBtn = page.getByRole('checkbox', { name: 'Dutch' });
     this.clearAllBtn = page.getByRole('button', { name: 'Clear all' });
-    this.showPlaceBtn = page.getByRole('link', { name: 'Show 1,000+ places' });
+    this.showPlaceBtn = page.getByRole('link', { name: /Show \d+ places/ });
     this.closeBtn = page.getByRole('button', { name: 'Close' });
   }
 
