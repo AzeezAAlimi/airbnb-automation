@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { HomePage } from '../../../../../pages/airbnb/homePage';
 import { loadHomePage } from '../../../../../utilities/helper';
+import 'dotenv/config';
 
 let homePage: HomePage;
 
@@ -10,6 +11,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe('Loggedout - Navigation - Login', () => {
+ 
   test('Loggedout - Apple login', async ({}) => {
     await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.appleLogin;
   });
@@ -23,9 +25,11 @@ test.describe('Loggedout - Navigation - Login', () => {
   });
 
   test('Loggedout - Email login', async ({}) => {
+    const email = process.env.EMAIL!;
+    const password = process.env.PASSWORD!;
     await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.emailLogin(
-      'qaairbnb0@gmail.com',
-      'test12345?',
+      email,
+      password
     );
   });
 });

@@ -1,6 +1,7 @@
 import { test } from '@playwright/test';
 import { HomePage } from '../../../../../pages/airbnb/homePage';
 import { loadHomePage } from '../../../../../utilities/helper';
+import 'dotenv/config';
 
 let homePage: HomePage;
 
@@ -10,10 +11,12 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe('Loggedin - Navigation', () => {
+  const email = process.env.EMAIL!;
+  const password = process.env.PASSWORD!;
   test('Loggedin - Message - Search for message', async ({ page }) => {
     await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.emailLogin(
-      'qaairbnb0@gmail.com',
-      'test12345?',
+      email,
+      password
     );
     // Navigate to Account settings and store the instance
     const message = await homePage.header.navigationMenu.navMenuBtnLoggedin.navigateToMessage();
@@ -22,8 +25,8 @@ test.describe('Loggedin - Navigation', () => {
 
   test('Loggedin - Wishlists - Get title', async ({ page }) => {
     await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.emailLogin(
-      'qaairbnb0@gmail.com',
-      'test12345?',
+      email,
+      password
     );
     const wishlists = await homePage.header.navigationMenu.navMenuBtnLoggedin.navigateToWishlist();
     await wishlists.getPageTitle();
@@ -31,8 +34,8 @@ test.describe('Loggedin - Navigation', () => {
 
   test('Loggedin - Trips - Get title', async ({ page }) => {
     await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.emailLogin(
-      'qaairbnb0@gmail.com',
-      'test12345?',
+      email,
+      password
     );
     const trips = await homePage.header.navigationMenu.navMenuBtnLoggedin.navigateToTrips();
     await trips.startSearchingForTrips();
@@ -40,8 +43,8 @@ test.describe('Loggedin - Navigation', () => {
 
   test('Loggedin - Notifications - Get title', async ({ page }) => {
     await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.emailLogin(
-      'qaairbnb0@gmail.com',
-      'test12345?',
+      email,
+      password
     );
     const notifications = await homePage.header.navigationMenu.navMenuBtnLoggedin.navigateToNotification();
     await notifications.getPageTitle();
@@ -49,8 +52,8 @@ test.describe('Loggedin - Navigation', () => {
 
   test('Loggedin - Log out', async ({ page }) => {
     await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.emailLogin(
-      'qaairbnb0@gmail.com',
-      'test12345?',
+      email,
+      password
     );
     await homePage.header.navigationMenu.navMenuBtnLoggedin.navigateToLogout();
   });

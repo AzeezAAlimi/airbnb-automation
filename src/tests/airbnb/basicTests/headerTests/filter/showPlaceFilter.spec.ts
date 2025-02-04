@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { HomePage } from '../../../../../pages/airbnb/homePage';
 import { loadHomePage } from '../../../../../utilities/helper';
+import 'dotenv/config';
 
 let homePage: HomePage;
 
@@ -10,14 +11,16 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.describe('Filter - Show places', () => {
+  const email = process.env.EMAIL!;
+  const password = process.env.PASSWORD!;
   test('Loggedout - Filter - Show 1000 places', async ({ page }) => {
     await homePage.header.filters.show1000PlacesFilter();
   });
 
   test('Loggedin - Filter - Show 1000 places', async ({ page }) => {
     await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.emailLogin(
-      'qaairbnb0@gmail.com',
-      'test12345?',
+      email,
+      password
     );
     await homePage.header.filters.show1000PlacesFilter();
   });
@@ -28,8 +31,8 @@ test.describe('Filter - Show places', () => {
 
   test('Loggedin - Filter - Show the selected filter', async ({ page }) => {
     await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.emailLogin(
-      'qaairbnb0@gmail.com',
-      'test12345?',
+      email,
+      password
     );
     await homePage.header.filters.showPlacesFilter();
   });

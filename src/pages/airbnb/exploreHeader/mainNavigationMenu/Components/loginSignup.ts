@@ -47,9 +47,9 @@ export class LoginSignup {
     await this.continueWithEmailBtn.click({ force: true });
     await this.page.waitForLoadState('domcontentloaded');
     await this.emailLoginInput.click();
-    await this.emailLoginInput.fill(email); //qaairbnb0@gmail.com
+    await this.emailLoginInput.fill(email);
     await this.SignupLoginContinueBtn.click();
-    await this.emailpasswordInput.fill(password); // test12345?
+    await this.emailpasswordInput.fill(password);
     await this.SignupLoginContinueBtn.click();
   }
 
