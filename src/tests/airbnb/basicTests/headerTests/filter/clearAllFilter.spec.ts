@@ -18,10 +18,7 @@ test.describe('Filter - Clear all filter', () => {
   });
 
   test('Loggedin - Filter - Clear all filter', async ({ page }) => {
-    await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.emailLogin(
-      email,
-      password
-    );
+    await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.emailLogin(email, password);
     await homePage.header.filters.clearAllFilter();
   });
 
@@ -30,10 +27,7 @@ test.describe('Filter - Clear all filter', () => {
   });
 
   test('Loggedin - Filter - Clear all filter + Selected filters', async ({ page }) => {
-    await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.emailLogin(
-      email,
-      password
-    );
+    await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.emailLogin(email, password);
     await homePage.header.filters.clearRandomFilter();
   });
 });

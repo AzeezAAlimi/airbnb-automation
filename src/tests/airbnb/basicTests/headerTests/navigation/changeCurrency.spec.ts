@@ -14,28 +14,19 @@ test.describe('Loggedin - Navigation - Account - Global Preferences - Change cur
   const email = process.env.EMAIL!;
   const password = process.env.PASSWORD!;
   test('Loggedin - Navigation - Account - Global Preferences - Change currency to EUR', async ({ page }) => {
-    await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.emailLogin(
-      email,
-      password
-    );
+    await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.emailLogin(email, password);
     const accountSettings = await homePage.header.navigationMenu.navMenuBtnLoggedin.navigateToAccount();
     await accountSettings.globalPreferences.changecurrencyToEUR();
   });
 
   test('Loggedin - Navigation - Account - Global Preferences - Change currency to USD', async ({ page }) => {
-    await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.emailLogin(
-      email,
-      password
-    );
+    await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.emailLogin(email, password);
     const accountSettings = await homePage.header.navigationMenu.navMenuBtnLoggedin.navigateToAccount();
     await accountSettings.globalPreferences.changecurrencyToUSD();
   });
 
   test('Loggedin - Navigation - Account - Global Preferences - Change currency to GBP', async ({ page }) => {
-    await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.emailLogin(
-      email,
-      password
-    );
+    await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.emailLogin(email, password);
     const accountSettings = await homePage.header.navigationMenu.navMenuBtnLoggedin.navigateToAccount();
     await accountSettings.globalPreferences.changecurrencyToGBP();
   });

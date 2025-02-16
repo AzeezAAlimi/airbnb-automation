@@ -14,10 +14,7 @@ test.describe('Search experience', () => {
   const email = process.env.EMAIL!;
   const password = process.env.PASSWORD!;
   test('Loggedin - Search experience', async ({ page }) => {
-    await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.emailLogin(
-      email,
-      password
-    );
+    await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.emailLogin(email, password);
     await homePage.header.searchTab.searchExperiences.searchForAExperience('France');
   });
   test('Loggedout - Search experience', async ({ page }) => {
