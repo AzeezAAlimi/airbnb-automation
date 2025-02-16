@@ -11,9 +11,9 @@ export class SiteMap {
 
   async clickonSiteMap() {
     await this.siteMap.click();
-    await expect(this.page.getByRole('heading', { name: 'Top Destinations', exact: true })).toContainText(
-      'Top Destinations',
-    );
+    await expect(
+      this.page.getByRole('heading', { name: 'Top Destinations', exact: true }),
+    ).toContainText('Top Destinations');
     await this.page.goBack();
   }
 }

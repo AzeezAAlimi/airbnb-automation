@@ -6,11 +6,15 @@ export class ProfessionalHostingTools {
 
   constructor(page: Page) {
     this.page = page;
-    this.professionalHostingTools = page.getByRole('link', { name: 'Professional hosting tools' });
+    this.professionalHostingTools = page.getByRole('link', {
+      name: 'Professional hosting tools',
+    });
   }
 
   public async getPageURL() {
     await this.professionalHostingTools.click();
-    await expect(this.page).toHaveURL('https://www.airbnb.com/account-settings/professional-hosting');
+    await expect(this.page).toHaveURL(
+      'https://www.airbnb.com/account-settings/professional-hosting',
+    );
   }
 }

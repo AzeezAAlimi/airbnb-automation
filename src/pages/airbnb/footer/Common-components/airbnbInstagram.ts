@@ -6,11 +6,16 @@ export class AirbnbInstagram {
 
   constructor(page: Page) {
     this.page = page;
-    this.airbnbInstagramBtn = page.getByRole('link', { name: 'Navigate to Instagram' });
+    this.airbnbInstagramBtn = page.getByRole('link', {
+      name: 'Navigate to Instagram',
+    });
   }
 
   async clickonInstagramBtn() {
-    const [newTab] = await Promise.all([this.page.context().waitForEvent('page'), this.airbnbInstagramBtn.click()]);
+    const [newTab] = await Promise.all([
+      this.page.context().waitForEvent('page'),
+      this.airbnbInstagramBtn.click(),
+    ]);
     await newTab.waitForLoadState();
     await expect(newTab).toHaveURL('https://www.instagram.com/airbnb/');
     await newTab.close();

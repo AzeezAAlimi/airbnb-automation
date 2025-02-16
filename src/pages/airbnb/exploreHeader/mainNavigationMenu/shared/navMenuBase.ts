@@ -21,10 +21,18 @@ export class NavMenuBase {
     this.menuTrigger = page.getByTestId('cypress-headernav-profile');
 
     // Initialize share locators
-    this.giftCardBtn = this.menuContainer.getByRole('link', { name: 'Gift cards' });
-    this.airbnbYourHomeBtn = this.menuContainer.getByRole('link', { name: 'Airbnb your home' });
-    this.hostAnExperienceBtn = this.menuContainer.getByRole('link', { name: 'Host an experience' });
-    this.helpCenterBtn = this.menuContainer.getByRole('link', { name: 'Help Center' });
+    this.giftCardBtn = this.menuContainer.getByRole('link', {
+      name: 'Gift cards',
+    });
+    this.airbnbYourHomeBtn = this.menuContainer.getByRole('link', {
+      name: 'Airbnb your home',
+    });
+    this.hostAnExperienceBtn = this.menuContainer.getByRole('link', {
+      name: 'Host an experience',
+    });
+    this.helpCenterBtn = this.menuContainer.getByRole('link', {
+      name: 'Help Center',
+    });
   }
 
   // Base interaction method

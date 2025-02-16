@@ -6,11 +6,15 @@ export class LoginAndSecurity {
 
   constructor(page: Page) {
     this.page = page;
-    this.loginAndSecurity = page.getByRole('link', { name: 'Login & security' });
+    this.loginAndSecurity = page.getByRole('link', {
+      name: 'Login & security',
+    });
   }
 
   public async getPageURL() {
     await this.loginAndSecurity.click();
-    await expect(this.page).toHaveURL('https://www.airbnb.com/account-settings/login-and-security');
+    await expect(this.page).toHaveURL(
+      'https://www.airbnb.com/account-settings/login-and-security',
+    );
   }
 }

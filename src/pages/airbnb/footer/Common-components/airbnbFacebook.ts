@@ -10,7 +10,10 @@ export class AirbnbFacebook {
   }
 
   async clickonFacebookBtn() {
-    const [newTab] = await Promise.all([this.page.context().waitForEvent('page'), this.facebookBtn.click()]);
+    const [newTab] = await Promise.all([
+      this.page.context().waitForEvent('page'),
+      this.facebookBtn.click(),
+    ]);
     await newTab.waitForLoadState();
     await expect(newTab).toHaveURL('https://www.facebook.com/airbnb');
     await newTab.close();

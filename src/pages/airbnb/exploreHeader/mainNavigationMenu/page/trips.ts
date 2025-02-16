@@ -11,6 +11,8 @@ export class Trips {
 
   public async startSearchingForTrips() {
     await this.startSearchBtn.click();
-    await expect(this.page).toHaveURL('https://www.airbnb.com/?source=itinerary');
+    await expect(this.page).toHaveURL(
+      'https://www.airbnb.com/?source=itinerary',
+    );
   }
 }

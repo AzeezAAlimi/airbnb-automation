@@ -19,13 +19,27 @@ export class LoginSignup {
 
     // Initialization Locators in the constructor
     this.loginSignupBtn = this.page.getByRole('link', { name: 'Log in' });
-    this.continueWithAppleBtn = this.page.getByRole('dialog').getByTestId('social-auth-button-apple');
-    this.continueWithGoogleBtn = this.page.getByRole('dialog').getByTestId('social-auth-button-google');
-    this.continueWithFacebookBtn = this.page.getByRole('dialog').getByTestId('social-auth-button-facebook');
-    this.continueWithEmailBtn = this.page.getByTestId('login-pane').getByTestId('social-auth-button-email');
-    this.emailLoginInput = this.page.getByTestId('login-pane').getByTestId('email-login-email');
-    this.SignupLoginContinueBtn = this.page.getByTestId('login-pane').getByTestId('signup-login-submit-btn');
-    this.emailpasswordInput = this.page.getByTestId('login-pane').getByTestId('email-signup-password');
+    this.continueWithAppleBtn = this.page
+      .getByRole('dialog')
+      .getByTestId('social-auth-button-apple');
+    this.continueWithGoogleBtn = this.page
+      .getByRole('dialog')
+      .getByTestId('social-auth-button-google');
+    this.continueWithFacebookBtn = this.page
+      .getByRole('dialog')
+      .getByTestId('social-auth-button-facebook');
+    this.continueWithEmailBtn = this.page
+      .getByTestId('login-pane')
+      .getByTestId('social-auth-button-email');
+    this.emailLoginInput = this.page
+      .getByTestId('login-pane')
+      .getByTestId('email-login-email');
+    this.SignupLoginContinueBtn = this.page
+      .getByTestId('login-pane')
+      .getByTestId('signup-login-submit-btn');
+    this.emailpasswordInput = this.page
+      .getByTestId('login-pane')
+      .getByTestId('email-signup-password');
   }
 
   private async initiateLoginProcess() {
@@ -34,7 +48,10 @@ export class LoginSignup {
   }
 
   private async socialLogin(continueBtn: Locator, expectedTitle: string) {
-    const [newTab] = await Promise.all([this.page.context().waitForEvent('page'), continueBtn.click()]);
+    const [newTab] = await Promise.all([
+      this.page.context().waitForEvent('page'),
+      continueBtn.click(),
+    ]);
     await newTab.waitForLoadState();
     await expect(newTab).toHaveTitle(expectedTitle);
     await newTab.close();
@@ -55,7 +72,10 @@ export class LoginSignup {
 
   public async appleLogin() {
     await this.initiateLoginProcess();
-    await this.socialLogin(this.continueWithAppleBtn, 'Sign in to Apple Account');
+    await this.socialLogin(
+      this.continueWithAppleBtn,
+      'Sign in to Apple Account',
+    );
   }
 
   public async facebookLogin() {
@@ -65,6 +85,9 @@ export class LoginSignup {
 
   public async googleLogin() {
     await this.initiateLoginProcess();
-    await this.socialLogin(this.continueWithGoogleBtn, 'Sign in - Google Accounts');
+    await this.socialLogin(
+      this.continueWithGoogleBtn,
+      'Sign in - Google Accounts',
+    );
   }
 }

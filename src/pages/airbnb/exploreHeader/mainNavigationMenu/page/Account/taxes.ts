@@ -11,6 +11,8 @@ export class Taxes {
 
   public async getPageURL() {
     await this.taxes.click();
-    await expect(this.page).toHaveURL('https://www.airbnb.com/account-settings/taxes/taxpayers');
+    await expect(this.page).toHaveURL(
+      'https://www.airbnb.com/account-settings/taxes/taxpayers',
+    );
   }
 }

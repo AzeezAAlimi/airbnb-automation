@@ -59,6 +59,8 @@ export class NavMenuBtnLoggedin extends NavMenuBase {
 
   public async navigateToLogout(): Promise<void> {
     return this.navigateTo(this.logoutBtn);
-    await expect(this.page).toHaveURL('https://www.airbnb.com/?has_logged_out=1');
+    await expect(this.page).toHaveURL(
+      'https://www.airbnb.com/?has_logged_out=1',
+    );
   }
 }

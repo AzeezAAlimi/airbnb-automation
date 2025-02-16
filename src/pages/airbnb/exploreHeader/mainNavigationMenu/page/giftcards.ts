@@ -8,6 +8,8 @@ export class Giftcards {
   }
 
   public async getPageTitle() {
-    await expect(this.page.getByRole('heading', { name: 'Airbnb gift cards' })).toContainText('Airbnb gift cards');
+    await expect(
+      this.page.getByRole('heading', { name: 'Airbnb gift cards' }),
+    ).toContainText('Airbnb gift cards');
   }
 }

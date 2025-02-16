@@ -13,11 +13,13 @@ export class AirbnbCategories {
 
   public async icons() {
     await this.iconsItem.click();
-    await expect(this.page.getByTestId('category-item--Icons--checked')).toBeTruthy;
+    await expect(this.page.getByTestId('category-item--Icons--checked'))
+      .toBeTruthy;
   }
 
   public async tropical() {
     await this.tropicalItem.click();
-    await expect(this.page.getByTestId('category-item--Tropical--checked')).toBeTruthy;
+    await expect(this.page.getByTestId('category-item--Tropical--checked'))
+      .toBeTruthy;
   }
 }

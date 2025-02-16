@@ -12,7 +12,9 @@ export class Messages {
     this.page = page;
     this.searchAllMessageBtn = page.getByRole('button', { name: 'Search' });
     this.searchAllMessageInput = page.getByRole('textbox', { name: 'Search' });
-    this.messageSettingBtn = page.getByRole('button', { name: 'Messaging Settings' });
+    this.messageSettingBtn = page.getByRole('button', {
+      name: 'Messaging Settings',
+    });
     this.cancelBtn = page.getByRole('button', { name: 'Cancel' });
     this.closeBtn = page.getByRole('button', { name: 'Close' });
   }
@@ -21,7 +23,9 @@ export class Messages {
     await this.searchAllMessageBtn.click();
     await this.searchAllMessageInput.click();
     await this.searchAllMessageInput.fill(message);
-    await expect(this.page.getByText('We couldn’t find any messages')).toContainText('We couldn’t find any messages');
+    await expect(
+      this.page.getByText('We couldn’t find any messages'),
+    ).toContainText('We couldn’t find any messages');
     await this.cancelBtn.click();
   }
 

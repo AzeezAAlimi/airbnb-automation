@@ -11,6 +11,8 @@ export class PersonalInfo {
 
   public async getPageURL() {
     await this.personalInfo.click();
-    await expect(this.page).toHaveURL('https://www.airbnb.com/account-settings/personal-info');
+    await expect(this.page).toHaveURL(
+      'https://www.airbnb.com/account-settings/personal-info',
+    );
   }
 }

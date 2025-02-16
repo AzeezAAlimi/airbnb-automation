@@ -6,7 +6,9 @@ export class GuestReferrals {
 
   constructor(page: Page) {
     this.page = page;
-    this.guestReferrals = page.getByRole('link', { name: 'Referral credit & coupon' });
+    this.guestReferrals = page.getByRole('link', {
+      name: 'Referral credit & coupon',
+    });
   }
 
   public async getPageURL() {

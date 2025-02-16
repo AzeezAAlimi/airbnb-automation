@@ -6,15 +6,24 @@ export class YourPrivacyChoices {
 
   constructor(page: Page) {
     this.page = page;
-    this.yourPrivacyChoices = page.getByRole('link', { name: 'Your Privacy Choices', exact: true });
+    this.yourPrivacyChoices = page.getByRole('link', {
+      name: 'Your Privacy Choices',
+      exact: true,
+    });
   }
 
   async clickonYourPrivacyChoices() {
-    const [newTab] = await Promise.all([this.page.context().waitForEvent('page'), this.yourPrivacyChoices.click()]);
+    const [newTab] = await Promise.all([
+      this.page.context().waitForEvent('page'),
+      this.yourPrivacyChoices.click(),
+    ]);
 
     await newTab.waitForLoadState();
 
-    const heading = newTab.getByRole('heading', { name: 'Your privacy choices', exact: true });
+    const heading = newTab.getByRole('heading', {
+      name: 'Your privacy choices',
+      exact: true,
+    });
     await expect(heading).toContainText('Your privacy choices');
 
     await newTab.close();

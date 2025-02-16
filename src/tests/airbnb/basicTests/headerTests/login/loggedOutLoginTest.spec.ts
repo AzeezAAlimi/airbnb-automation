@@ -12,7 +12,8 @@ test.beforeEach(async ({ page }) => {
 
 test.describe('Loggedout - Navigation - Login', () => {
   test('Loggedout - Apple login', async ({}) => {
-    await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.appleLogin;
+    await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup
+      .appleLogin;
   });
 
   test('Loggedout - Facebook login', async ({}) => {
@@ -26,6 +27,9 @@ test.describe('Loggedout - Navigation - Login', () => {
   test('Loggedout - Email login', async ({}) => {
     const email = process.env.EMAIL!;
     const password = process.env.PASSWORD!;
-    await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.emailLogin(email, password);
+    await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.emailLogin(
+      email,
+      password,
+    );
   });
 });

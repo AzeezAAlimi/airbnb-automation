@@ -11,5 +11,7 @@ test('Airbnb website using the browser fixture', async ({ browser }) => {
 test('Airbnb website using the page fixture', async ({ page }) => {
   await loadHomePage(page);
   console.log(await page.title());
-  await expect(page).toHaveTitle('Airbnb | Vacation rentals, cabins, beach houses, & more');
+  await expect(page).toHaveTitle(
+    'Airbnb | Vacation rentals, cabins, beach houses, & more',
+  );
 });

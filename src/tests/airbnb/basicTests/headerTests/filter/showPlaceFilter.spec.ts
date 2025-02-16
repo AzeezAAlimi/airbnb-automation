@@ -18,7 +18,10 @@ test.describe('Filter - Show places', () => {
   });
 
   test('Loggedin - Filter - Show 1000 places', async ({ page }) => {
-    await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.emailLogin(email, password);
+    await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.emailLogin(
+      email,
+      password,
+    );
     await homePage.header.filters.show1000PlacesFilter();
   });
 
@@ -27,7 +30,10 @@ test.describe('Filter - Show places', () => {
   });
 
   test('Loggedin - Filter - Show the selected filter', async ({ page }) => {
-    await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.emailLogin(email, password);
+    await homePage.header.navigationMenu.navMenuBtnLoggedout.loginSignup.emailLogin(
+      email,
+      password,
+    );
     await homePage.header.filters.showPlacesFilter();
   });
 });

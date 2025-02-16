@@ -11,6 +11,8 @@ export class Notifications {
 
   public async getPageURL() {
     await this.notifications.click();
-    await expect(this.page).toHaveURL('https://www.airbnb.com/account-settings/notifications');
+    await expect(this.page).toHaveURL(
+      'https://www.airbnb.com/account-settings/notifications',
+    );
   }
 }

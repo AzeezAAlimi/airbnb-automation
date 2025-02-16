@@ -6,11 +6,15 @@ export class PaymentsAndPayouts {
 
   constructor(page: Page) {
     this.page = page;
-    this.paymentsAndPayouts = page.getByRole('link', { name: 'Payments & payouts' });
+    this.paymentsAndPayouts = page.getByRole('link', {
+      name: 'Payments & payouts',
+    });
   }
 
   public async getPageURL() {
     await this.paymentsAndPayouts.click();
-    await expect(this.page).toHaveURL('https://www.airbnb.com/account-settings/payments/payment-methods');
+    await expect(this.page).toHaveURL(
+      'https://www.airbnb.com/account-settings/payments/payment-methods',
+    );
   }
 }

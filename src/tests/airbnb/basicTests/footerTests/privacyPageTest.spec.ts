@@ -21,7 +21,8 @@ test.describe('Privacypage footer link test', () => {
   });
 
   test('Currency and Language test', async ({}) => {
-    await privacyPage.footerSection.footerChooseACurrency.clickonCroatianKunaBtn;
+    await privacyPage.footerSection.footerChooseACurrency
+      .clickonCroatianKunaBtn;
     await privacyPage.footerSection.footerChooseALanguage.clickonDeutschLanguage();
   });
 

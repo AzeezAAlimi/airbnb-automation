@@ -11,6 +11,8 @@ export class TravelForWork {
 
   public async getPageURL() {
     await this.travelForWork.click();
-    await expect(this.page).toHaveURL('https://www.airbnb.com/account-settings/airbnb-for-work');
+    await expect(this.page).toHaveURL(
+      'https://www.airbnb.com/account-settings/airbnb-for-work',
+    );
   }
 }

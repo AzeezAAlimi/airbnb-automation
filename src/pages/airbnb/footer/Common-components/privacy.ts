@@ -11,9 +11,9 @@ export class Privacy {
 
   async clickonPrivacy() {
     await this.privacy.click();
-    await expect(this.page.getByRole('heading', { name: 'Airbnb Privacy', exact: true })).toContainText(
-      'Airbnb Privacy',
-    );
+    await expect(
+      this.page.getByRole('heading', { name: 'Airbnb Privacy', exact: true }),
+    ).toContainText('Airbnb Privacy');
     await this.page.goBack();
   }
 }

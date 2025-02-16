@@ -8,6 +8,8 @@ export class Notifications {
   }
 
   public async getPageTitle() {
-    await expect(this.page.getByRole('heading', { name: 'Notifications' })).toContainText('Notifications');
+    await expect(
+      this.page.getByRole('heading', { name: 'Notifications' }),
+    ).toContainText('Notifications');
   }
 }

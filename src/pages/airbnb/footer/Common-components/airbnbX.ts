@@ -11,7 +11,10 @@ export class AirbnbX {
 
   async clickonXBtn() {
     await this.airbnbXBtn.click();
-    const [newTab] = await Promise.all([this.page.context().waitForEvent('page'), this.airbnbXBtn.click()]);
+    const [newTab] = await Promise.all([
+      this.page.context().waitForEvent('page'),
+      this.airbnbXBtn.click(),
+    ]);
     await newTab.waitForLoadState();
     await expect(newTab).toHaveURL('https://x.com/airbnb?mx=2');
     await newTab.close();

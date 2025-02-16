@@ -9,8 +9,12 @@ export class GlobalPreferences {
 
   constructor(page: Page) {
     this.page = page;
-    this.globalPreferencesNav = page.getByRole('link', { name: 'Global preferences' });
-    this.editPreferredcurrency = page.getByRole('button', { name: 'Edit' }).nth(1);
+    this.globalPreferencesNav = page.getByRole('link', {
+      name: 'Global preferences',
+    });
+    this.editPreferredcurrency = page
+      .getByRole('button', { name: 'Edit' })
+      .nth(1);
     this.currencyDropDown = page.locator("[id='native_currency']");
     this.saveBtn = page.getByRole('button', { name: 'Save' });
   }

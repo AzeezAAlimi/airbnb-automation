@@ -8,6 +8,8 @@ export class HostAnExperience {
   }
 
   public async getPageURL() {
-    await expect(this.page).toHaveURL('https://www.airbnb.com/host/experiences?from_nav=1');
+    await expect(this.page).toHaveURL(
+      'https://www.airbnb.com/host/experiences?from_nav=1',
+    );
   }
 }

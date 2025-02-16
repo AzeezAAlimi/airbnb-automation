@@ -11,9 +11,9 @@ export class Terms {
 
   async clickonTerms() {
     await this.terms.click();
-    await expect(this.page.getByRole('heading', { name: 'Terms of Service', exact: true })).toContainText(
-      'Terms of Service',
-    );
+    await expect(
+      this.page.getByRole('heading', { name: 'Terms of Service', exact: true }),
+    ).toContainText('Terms of Service');
     await this.page.goBack();
   }
 }

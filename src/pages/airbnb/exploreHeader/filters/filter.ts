@@ -125,18 +125,38 @@ export class Filter {
     this.filterBtn = page.getByTestId('category-bar-filter-button');
     this.typeOfPlaceAnyTypeBtn = page.getByRole('radio', { name: 'Any type' });
     this.typeOfPlaceRoomBtn = page.getByRole('radio', { name: 'Room' });
-    this.typeOfPlaceEntireHomeBtn = page.getByRole('radio', { name: 'Entire home' });
+    this.typeOfPlaceEntireHomeBtn = page.getByRole('radio', {
+      name: 'Entire home',
+    });
     this.minPriceRangeInputBtn = page.locator('[id="price_filter_min"]');
     this.maxPriceRangeInputBtn = page.locator('[id="price_filter_max"]');
-    this.increaseNoOfBedRoomsBtn = page.getByTestId('stepper-filter-item-min_bedrooms-stepper-increase-button');
-    this.increaseNoOfBedsBtn = page.getByTestId('stepper-filter-item-min_beds-stepper-increase-button');
-    this.increaseNoOfBathRoomsBtn = page.getByTestId('stepper-filter-item-min_bathrooms-stepper-increase-button');
-    this.decreaseNoOfBedRoomsBtn = page.getByTestId('stepper-filter-item-min_bedrooms-stepper-decrease-button');
-    this.decreaseNoOfBedsBtn = page.getByTestId('stepper-filter-item-min_beds-stepper-decrease-button');
-    this.decreaseNoOfBathRoomsBtn = page.getByTestId('stepper-filter-item-min_bathrooms-stepper-decrease-button');
-    this.noOfBedRoomsValue = page.getByTestId('stepper-filter-item-min_bedrooms-stepper-value');
-    this.noOfBedsValue = page.getByTestId('stepper-filter-item-min_beds-stepper-value');
-    this.noOfBathRoomsValue = page.getByTestId('stepper-filter-item-min_bathrooms-stepper-value');
+    this.increaseNoOfBedRoomsBtn = page.getByTestId(
+      'stepper-filter-item-min_bedrooms-stepper-increase-button',
+    );
+    this.increaseNoOfBedsBtn = page.getByTestId(
+      'stepper-filter-item-min_beds-stepper-increase-button',
+    );
+    this.increaseNoOfBathRoomsBtn = page.getByTestId(
+      'stepper-filter-item-min_bathrooms-stepper-increase-button',
+    );
+    this.decreaseNoOfBedRoomsBtn = page.getByTestId(
+      'stepper-filter-item-min_bedrooms-stepper-decrease-button',
+    );
+    this.decreaseNoOfBedsBtn = page.getByTestId(
+      'stepper-filter-item-min_beds-stepper-decrease-button',
+    );
+    this.decreaseNoOfBathRoomsBtn = page.getByTestId(
+      'stepper-filter-item-min_bathrooms-stepper-decrease-button',
+    );
+    this.noOfBedRoomsValue = page.getByTestId(
+      'stepper-filter-item-min_bedrooms-stepper-value',
+    );
+    this.noOfBedsValue = page.getByTestId(
+      'stepper-filter-item-min_beds-stepper-value',
+    );
+    this.noOfBathRoomsValue = page.getByTestId(
+      'stepper-filter-item-min_bathrooms-stepper-value',
+    );
     this.showMoreAmenitieaBtn = page.getByRole('button', { name: 'Show more' });
     this.amenitiesWifiBtn = page.getByRole('button', { name: 'Wifi' });
     this.amenitiesHeatingBtn = page.getByRole('button', { name: 'Heating' });
@@ -145,20 +165,40 @@ export class Filter {
     this.amenitiesGymBtn = page.getByRole('button', { name: 'Gym' });
     this.amenitiesBbqGrillBtn = page.getByRole('button', { name: 'BBQ grill' });
     this.waterFrontBtn = page.getByRole('button', { name: 'Waterfront' });
-    this.amenitiesAllowSmokingBtn = page.getByRole('button', { name: 'Smoke alarm' });
+    this.amenitiesAllowSmokingBtn = page.getByRole('button', {
+      name: 'Smoke alarm',
+    });
     this.instantBookBtn = page.getByRole('button', { name: 'Instant Book' });
     this.allowsPetsBtn = page.getByRole('button', { name: 'Allows pets' });
-    this.guestFavoriteBtn = page.getByRole('button', { name: 'Guest favorite' });
-    this.propertyTypeSection = page.getByRole('button', { name: 'Property type' });
+    this.guestFavoriteBtn = page.getByRole('button', {
+      name: 'Guest favorite',
+    });
+    this.propertyTypeSection = page.getByRole('button', {
+      name: 'Property type',
+    });
     this.apartmentBtn = page.getByRole('button', { name: 'Apartment' });
     this.hotelBtn = page.getByRole('button', { name: 'Hotel' });
-    this.accessibilityFeaturesSection = page.getByRole('button', { name: 'Accessibility features' });
-    this.stepFreeAccessBtn = page.getByRole('checkbox', { name: 'Step-free access' });
-    this.bigBedRoomEntranceBtn = page.getByRole('checkbox', { name: 'Bedroom entrance wider than 32 inches' });
-    this.toiletGrabBarBtn = page.getByRole('checkbox', { name: 'Toilet grab bar' });
-    this.stepFreeShowerBtn = page.getByRole('checkbox', { name: 'Step-free shower' });
-    this.ceilingOrMobileHoistBtn = page.getByRole('checkbox', { name: 'Ceiling or mobile hoist' });
-    this.hostLanguageSection = page.getByRole('button', { name: 'Host language' });
+    this.accessibilityFeaturesSection = page.getByRole('button', {
+      name: 'Accessibility features',
+    });
+    this.stepFreeAccessBtn = page.getByRole('checkbox', {
+      name: 'Step-free access',
+    });
+    this.bigBedRoomEntranceBtn = page.getByRole('checkbox', {
+      name: 'Bedroom entrance wider than 32 inches',
+    });
+    this.toiletGrabBarBtn = page.getByRole('checkbox', {
+      name: 'Toilet grab bar',
+    });
+    this.stepFreeShowerBtn = page.getByRole('checkbox', {
+      name: 'Step-free shower',
+    });
+    this.ceilingOrMobileHoistBtn = page.getByRole('checkbox', {
+      name: 'Ceiling or mobile hoist',
+    });
+    this.hostLanguageSection = page.getByRole('button', {
+      name: 'Host language',
+    });
     this.englishLangBtn = page.getByRole('checkbox', { name: 'English' });
     this.spanishLangBtn = page.getByRole('checkbox', { name: 'Spanish' });
     this.dutchLangBtn = page.getByRole('checkbox', { name: 'Dutch' });

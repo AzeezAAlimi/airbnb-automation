@@ -22,14 +22,28 @@ export class SearchStays {
   constructor(page: Page) {
     this.page = page;
     this.staysTab = page.getByTestId('header-tab-search-block-tab-STAYS');
-    this.staysSearchDestinationTab = page.getByTestId('structured-search-input-field-query');
-    this.staysSearchDestinationResult = page.getByTestId('structured-search-input-field-query-panel').first();
-    this.staysCheckinTab = page.getByTestId('structured-search-input-field-split-dates-0');
-    this.staysFlexibleTab = page.getByTestId('tab-list-wrapper').getByRole('tab', { name: 'Flexible' });
+    this.staysSearchDestinationTab = page.getByTestId(
+      'structured-search-input-field-query',
+    );
+    this.staysSearchDestinationResult = page
+      .getByTestId('structured-search-input-field-query-panel')
+      .first();
+    this.staysCheckinTab = page.getByTestId(
+      'structured-search-input-field-split-dates-0',
+    );
+    this.staysFlexibleTab = page
+      .getByTestId('tab-list-wrapper')
+      .getByRole('tab', { name: 'Flexible' });
     this.staysFlexibleWeekTab = page.getByLabel('Week', { exact: true });
-    this.staysFlexibleSelectMonthTab = page.getByTestId('carousel-chip').getByText('March');
-    this.staysGuestsDetailsTab = page.getByTestId('structured-search-input-field-guests-button');
-    this.staysGuestsAddAdult = page.getByTestId('stepper-adults-increase-button');
+    this.staysFlexibleSelectMonthTab = page
+      .getByTestId('carousel-chip')
+      .getByText('March');
+    this.staysGuestsDetailsTab = page.getByTestId(
+      'structured-search-input-field-guests-button',
+    );
+    this.staysGuestsAddAdult = page.getByTestId(
+      'stepper-adults-increase-button',
+    );
     this.searchBtn = page.getByTestId('structured-search-input-search-button');
   }
 

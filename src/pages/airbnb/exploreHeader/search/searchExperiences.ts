@@ -12,12 +12,24 @@ export class SearchExperiences {
 
   constructor(page: Page) {
     this.page = page;
-    this.experiencesTab = page.getByTestId('header-tab-search-block-tab-EXPERIENCES');
-    this.experiencesSearchDestinationTab = page.getByTestId('structured-search-input-field-query');
-    this.experiencesSearchDestinationResult = page.getByTestId('structured-search-input-field-query-panel').first();
-    this.experiencesDatesTab = page.getByTestId('structured-search-input-field-dates-button');
-    this.experiencesGuestsDetailsTab = page.getByTestId('structured-search-input-field-guests-button');
-    this.experiencesGuestsAddAdult = page.getByTestId('stepper-adults-increase-button');
+    this.experiencesTab = page.getByTestId(
+      'header-tab-search-block-tab-EXPERIENCES',
+    );
+    this.experiencesSearchDestinationTab = page.getByTestId(
+      'structured-search-input-field-query',
+    );
+    this.experiencesSearchDestinationResult = page
+      .getByTestId('structured-search-input-field-query-panel')
+      .first();
+    this.experiencesDatesTab = page.getByTestId(
+      'structured-search-input-field-dates-button',
+    );
+    this.experiencesGuestsDetailsTab = page.getByTestId(
+      'structured-search-input-field-guests-button',
+    );
+    this.experiencesGuestsAddAdult = page.getByTestId(
+      'stepper-adults-increase-button',
+    );
     this.searchBtn = page.getByTestId('structured-search-input-search-button');
   }
 

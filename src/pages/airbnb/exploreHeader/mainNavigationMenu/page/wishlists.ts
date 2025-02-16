@@ -8,6 +8,8 @@ export class Wishlists {
   }
 
   public async getPageTitle() {
-    await expect(this.page.getByRole('heading', { name: 'Wishlists' })).toContainText('Wishlists');
+    await expect(
+      this.page.getByRole('heading', { name: 'Wishlists' }),
+    ).toContainText('Wishlists');
   }
 }
